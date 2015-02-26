@@ -1,0 +1,90 @@
+<h1 class="ui header center aligned">[{{model.clanTag}}] {{model.name}}</h1>
+<div class="top-leagues">
+  {{#each league in model.ggplayer.top}}
+    <div class="top-league">
+      {{#if league.rank}}
+        <h1 class="ui header center aligned league-type" style="margin-bottom: 3px;">{{league.type}}</h1>
+        <div class="league league-big" {{bind-attr league=league.league rank=league.rank_range}}></div>
+        <h3 class="ui header center aligned">Rank {{league.rank}}</h3>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
+<div class="column" id="laddersLoading">
+  <div class="ui segment">
+    <div class="ui active inverted dimmer">
+      <div class="ui text loader">
+        Loading Ladders...
+      </div>
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+</div>
+<div class="ladders">
+  {{#if ladders.HOTS}}
+    <table class="ui celled striped table inverted purple">
+      <thead>
+        <tr>
+          <th>Heart of the Swarm</th>
+          <th>Ladder Name</th>
+          <th>Ladder Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each ladder in ladders.HOTS}}
+          <tr class="ladder-row" {{action 'loadLadder' ladder.ladder.id}} {{bind-attr data-id=ladder.ladder.id}}>
+            <td {{bind-attr title=ladder.characters.string}} class="league-row"><div class="league league-small" {{bind-attr league=ladder.ladder.league rank=ladder.ladder.rankRange}}></div>{{ladder.ladder.type}}</td>
+            <td>{{ladder.ladder.name}}</td>
+            <td>{{ladder.ladder.rank}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+  {{#if ladders.WOL}}
+    <table class="ui celled striped table inverted teal">
+      <thead>
+        <tr>
+          <th>Wings of Liberty</th>
+          <th>Ladder Name</th>
+          <th>Ladder Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each ladder in ladders.WOL}}
+          <tr class="ladder-row" {{action 'loadLadder' ladder.ladder.id}} {{bind-attr data-id=ladder.ladder.id}}>
+            <td {{bind-attr title=ladder.characters.string}} class="league-row"><div class="league league-small" {{bind-attr league=ladder.ladder.league rank=ladder.ladder.rankRange}}></div>{{ladder.ladder.type}}</td>
+            <td>{{ladder.ladder.name}}</td>
+            <td>{{ladder.ladder.rank}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>
+<div class="ladder">
+  {{#if this.ladderData}}
+    <table class="ui celled striped table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Team Members</th>
+          <th>Points</th>
+          <th>Wins</th>
+          <th>Losses</th>
+        </tr>
+      </thead>
+      {{#each team in this.ladderData}}
+        <tr>
+          <td class="ladder-row">{{team.rank}}</td>
+          <td>{{team.memberString}}</td>
+          <td>{{team.points}}</td>
+          <td>{{team.wins}}</td>
+          <td>{{team.losses}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  {{/if}}
+</div>

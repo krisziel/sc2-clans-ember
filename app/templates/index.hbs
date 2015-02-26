@@ -1,0 +1,22 @@
+<h1 class="header ui center aligned">Starcraft II Clans</h1>
+<div class="ui action left icon input clan-search">
+  <i class="search icon"></i>
+  {{input value=clanTag placeholder="Clan Tag"}}
+  <div id="searchClanButton" class="ui blue button" {{action 'searchClans'}}>Search For Clan</div>
+</div>
+<div class="ui segment" id="savingClan" style="display:none;">
+  <div class="ui active inverted dimmer">
+    <div class="ui indeterminate text active loader">
+      Saving Clan...
+      <br>
+      This takes about 1 second per member
+    </div>
+  </div>
+  <br><br>
+  <br><br>
+  <br><br>
+</div>
+<div class="ui info message" id="clanNotFound" style="display:none;">
+  <div class="header" style="text-align: center;">{{clanTag}} not found</div>
+  <p style="text-align: center;">Click save clan to create the clan's website</p>
+</div>

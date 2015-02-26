@@ -1,0 +1,28 @@
+<h1 class="header center aligned ui">[{{model.tag}}] {{model.name}}</h1>
+
+<div class="ui six wide column page grid" id="memberColumn">
+  <div class="ui action left icon input sixteen wide column row">
+    <div class="field">
+      <div class="ui left icon input" style="width: 100%;">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search Members" {{action 'searchMembers' on='keyUp'}} id="memberSearch">
+      </div>
+    </div>
+  </div>
+  <div class="ui divided very relaxed list sixteen wide column row" id="memberList">
+    {{#each player in model.players}}
+      <div class="item player-row" {{action 'selectPlayer' player }} {{bind-attr name=player.lowercasename}}>
+        {{#link-to 'clan.player' player.name}}
+          <div class="league league-mid" {{bind-attr league=player.highest_league_type rank=player.highest_league_rank}}></div>
+          <div class="content" style="padding-left: 10px;float:left;">
+            <div class="header">{{player.name}}</div>
+            <div class="description">{{player.highest_league_type}} {{player.ggplayer.most_played_race}}</div>
+          </div>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+</div>
+<div class="player-window nine wide column page grid">
+  {{outlet}}
+</div>
