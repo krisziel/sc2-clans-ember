@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model:function(params){
-    return Ember.$.getJSON('http://localhost:3000/clan/' + params.tag).then(function(response){
+    return Ember.$.getJSON('http://sc2clanapi.herokaupp.com/clan/' + params.tag).then(function(response){
       var players = response.clan[2];
       $.each(players,function(i,player){
         player['ggplayer']['most_played_race'] = race[player['ggplayer']['most_played_race']];

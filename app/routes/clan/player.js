@@ -49,7 +49,7 @@ export default Ember.Route.extend({
     });
     player.clanTag = this.modelFor('clan').tag;
     this.set('controller.model',player);
-    Ember.$.getJSON('http://localhost:3000/middleman/?url=https://us.api.battle.net/sc2/profile/' + player.bnet_id + '/' + player.region + '/' + player.name + '/ladders?locale=en_US&apikey=u6asyvg57kuru6gbsu37wxbmfd4djv9y',function(response){
+    Ember.$.getJSON('http://sc2clanapi.herokaupp.com/middleman/?url=https://us.api.battle.net/sc2/profile/' + player.bnet_id + '/' + player.region + '/' + player.name + '/ladders?locale=en_US&apikey=u6asyvg57kuru6gbsu37wxbmfd4djv9y',function(response){
       var ladderData = {
         HOTS:[[],[],[],[]],
         WOL:[[],[],[],[]]
