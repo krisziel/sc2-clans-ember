@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       if(Ember.$('#searchClanButton').html() === 'Save Clan') {
         Ember.$('#savingClan').css({display:'block'});
         Ember.$('#clanNotFound').css({display:'none'});
-        Ember.$.getJSON('http://sc2clanapi.herokaupp.com/clan/' + _this.get('clanTag') + '/add').then(function(response){
+        Ember.$.getJSON('http://sc2clanapi.herokuapp.com/clan/' + _this.get('clanTag') + '/add').then(function(response){
           if(response.error) {
             Ember.$('#searchClanButton').removeClass('blue').addClass('green').html('Save Clan');
             Ember.$('.clan-search input').on('change',function(){ Ember.$('#searchClanButton').removeClass('green').addClass('blue').html('Search for Clan'); });
@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
           }
         });
       } else {
-        Ember.$.getJSON('http://sc2clanapi.herokaupp.com/clan/' + _this.get('clanTag')).then(function(response){
+        Ember.$.getJSON('http://sc2clanapi.herokuapp.com/clan/' + _this.get('clanTag')).then(function(response){
           if(response.error) {
             Ember.$('#searchClanButton').removeClass('blue').addClass('green').html('Save Clan');
             Ember.$('.clan-search input').on('change',function(){ Ember.$('#searchClanButton').removeClass('green').addClass('blue').html('Search for Clan'); });
