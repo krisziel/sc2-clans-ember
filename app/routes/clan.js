@@ -19,16 +19,5 @@ export default Ember.Route.extend({
         players:players
       };
     });
-  },
-  actions:{
-    searchMembers:function(){
-      var query = $('#memberSearch').val().toLowerCase();
-      if(query.length > 0) {
-        $('.player-row').css({display:'none'}).removeClass('memberVisible');
-        $('.player-row[name*="' + query + '"]').css({display:'block'}).addClass('memberVisible');
-      } else {
-        $('.player-row').css({display:'block'}).addClass('memberVisible');
-      }
-    }
   }
 });
