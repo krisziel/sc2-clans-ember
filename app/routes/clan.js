@@ -10,6 +10,9 @@ export default Ember.Route.extend({
         player['highest_league_rank'] = rank(player.ggplayer.highest_league_rank);
         player['lowercasename'] = player['name'].toLowerCase();
       });
+      setTimeout(function(){
+        updateHeight();
+      },500);
       return {
         tag:response.clan[0],
         name:response.clan[1],

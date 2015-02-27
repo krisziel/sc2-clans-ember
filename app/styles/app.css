@@ -1,5 +1,29 @@
 body {
   overflow: hidden;
+  background: #011e3e;
+  color: #65AFFF;
+}
+input {
+  color: #2ABBFF !important;
+  border: 1px solid #064E86 !important;
+  background: #335C81 !important;
+}
+#clanNotFound {
+  margin: 15px auto 0 auto;
+  background: #274060 !important;
+  border-color: #064E86 !important;
+  width: 40% !important;
+  margin-left: 30% !important;
+}
+#savingClan {
+  margin: 15px auto 0 auto;
+  background: #274060 !important;
+  border-color: #064E86 !important;
+  width: 40% !important;
+  margin-left: 30% !important;
+}
+.button.ui.green {
+  background: #2ABBFF !important;
 }
 #searchClanButton {
   -webkit-transition: all 500ms;
@@ -8,13 +32,14 @@ body {
   width: 40%;
   margin-left: 30%;
   position: relative;
+  padding: 0 !important;
 }
-.clan-search > .icon {
-  margin-left: 10px !important;
-  margin-right: -10px !important;
+.clan-search input {
+  border-color: #2ABBFF !important;
 }
 .player-row {
   padding: 8px 5px !important;
+  border-color: #064E86 !important;
 }
 .player-row .container {
   margin: 0;
@@ -22,7 +47,7 @@ body {
   text-decoration: none;
 }
 .player-row.active {
-  background: rgba(39, 41, 43, 0.15);
+  background: #295584 !important;
 }
 .player-row .header {
   padding-top: 3px;
@@ -42,6 +67,8 @@ body {
   -o-border-radius: 3px;
   border-radius: 3px;
   overflow: auto;
+  background: #274060;
+  border-color: #064E86;
 }
 #memberSearch {
   width: 100%;
@@ -62,6 +89,8 @@ body {
   border-radius: 3px;
   display: none;
   overflow: auto;
+  background: #274060 !important;
+  border-color: #064E86;
 }
 .player-window > h1 {
   font-size: 28px;
@@ -94,6 +123,27 @@ body {
 }
 .ladder {
   margin-top: 15px;
+  color: #ffffff !important;
+}
+td.active {
+  background: #564f8a !important;
+}
+#laddersLoading div, #savingClan div {
+  background: #3b83c0 !important;
+}
+/* .ladder table {
+  border-color: #064E86 !important;
+}
+.ladder th {
+  border-color: #064E86 !important;
+  background: #335C81 !important;
+}
+.ladder td {
+  border-color: #064E86 !important;
+  background: #335C81 !important;
+} */
+.header {
+  color: #65AFFF !important;
 }
 
 /* league icons */

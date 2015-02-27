@@ -89,16 +89,16 @@ function parseFullLadder(ladder) {
   var teams = [];
   var currentTeam = {};
   $.each(ladder,function(i,player){
+    var clan = '';
+    if(player.character.clanTag.length > 0) {
+      clan = '[' + player.character.clanTag + '] ';
+    }
     if((player.joinTimestamp === currentTeam.joinTimestamp)&&(player.wins === currentTeam.wins)&&(player.losses === currentTeam.losses)&&(player.points === currentTeam.points)) {
       currentTeam.members.push(player.character);
-        currentTeam.memberString += ", " + player.character.displayName;
+        currentTeam.memberString += ", " + clan+player.character.displayName;
     } else {
       if(currentTeam.members) {
         teams.push(currentTeam);
-      }
-      var clan = "";
-      if(player.character.clanTag.length > 0) {
-        clan = '[' + player.character.clanTag + '] ';
       }
       currentTeam = {
         rank:(teams.length + 1),
