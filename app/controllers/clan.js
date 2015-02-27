@@ -14,7 +14,6 @@ export default Ember.Controller.extend({
       return member.name.toLowerCase().indexOf(filterString) >= 0;
     });
   }.property('memberSearchString', 'model.@each'),
-
   memberSearchResults:function(){
     if(this.get('memberSearch').length === 0) {
       return false;

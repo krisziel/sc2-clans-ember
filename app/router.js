@@ -6,7 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('chart', {path:'/chart'});
   this.resource('clan', {path:'/:tag'}, function() {
     this.route('player',{path:'/:player'}, function(){
       this.route('ladder',{path:'/:ladder_id'});

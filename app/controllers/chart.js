@@ -27,10 +27,36 @@ export default Ember.Controller.extend({
       label: "Protoss Wins"
     }
   ],
+  clanRaceData:[
+    {
+      value: 14,
+      color:"#D95C5C",
+      highlight: "#DC6868",
+      label: "Losses"
+    },
+    {
+      value: 87,
+      color: "#00B5AD",
+      highlight: "#00C4BC",
+      label: "Terran Wins"
+    },
+    {
+      value: 40,
+      color: "#564f8a",
+      highlight: "#4c467a",
+      label: "Zerg Wins"
+    },
+    {
+      value: 150,
+      color: "#F09E00",
+      highlight: "rgba(243, 149, 0, 0.85)",
+      label: "Protoss Wins"
+    }
+  ],
   raceOptions:{
     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
   },
-  clanRaceData:{
+  clanRaceData2:{
     labels: ["Protoss Wins","Zerg Wins","Terran Wins","Losses"],
     datasets: [
         {

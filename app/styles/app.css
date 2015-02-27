@@ -268,3 +268,11 @@ td.active {
   background-image: url(terran-small.png);
   padding-left: 0px !important;
 }
+
+/* chart test stuff */
+
+canvas[width="212"] {
+  position: absolute;
+  top: 110px;
+  left: 108px;
+}
