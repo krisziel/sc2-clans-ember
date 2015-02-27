@@ -125,6 +125,9 @@ input {
   margin-top: 15px;
   color: #ffffff !important;
 }
+.ladder-active td, .ladder-active tr {
+  background-color: #295584 !important;
+}
 td.active {
   background: #564f8a !important;
 }

@@ -24,10 +24,10 @@ export default Ember.Route.extend({
     searchMembers:function(){
       var query = $('#memberSearch').val().toLowerCase();
       if(query.length > 0) {
-        $('.player-row').css({display:'none'});
-        $('.player-row[name*="' + query + '"]').css({display:'block'});
+        $('.player-row').css({display:'none'}).removeClass('memberVisible');
+        $('.player-row[name*="' + query + '"]').css({display:'block'}).addClass('memberVisible');
       } else {
-        $('.player-row').css({display:'block'});
+        $('.player-row').css({display:'block'}).addClass('memberVisible');
       }
     }
   }
